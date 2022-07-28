@@ -105,7 +105,7 @@
                                     >Foydalanuvchi</el-tag
                                 >
                             </div>
-                            <div v-if="item.status == false" class="n">
+                            <div v-else class="n">
                                 <el-tag
                                     type="warning"
                                     class="status"
@@ -244,7 +244,7 @@ export default {
             this.length = data.count;
         },
         async confirmDelete(id) {
-            let data = await this.$axios.$delete("auth/" + id);
+            let data = await this.$axios.$delete("auth/delete/" + id);
             this.getData();
         },
     },

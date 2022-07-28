@@ -117,6 +117,11 @@
                                 <el-input v-model="seria.url"></el-input>
                             </el-form-item>
                         </el-col>
+                        <el-col :span="24">
+                            <el-form-item label="Notification jo'natish">
+                                <el-switch v-model="seria.isNot"> </el-switch>
+                            </el-form-item>
+                        </el-col>
                     </el-row>
                 </div>
             </el-form>
@@ -227,6 +232,7 @@ export default {
                 url: "",
                 length: "",
                 date: "",
+                isNot: false,
             },
             Editdata: null,
             isAddModal: false,
@@ -284,7 +290,17 @@ export default {
                     type: "success",
                     showClose: true,
                 });
+
                 this.isAddModal = false;
+                this.seria.name.uz = "";
+                this.seria.name.ru = "";
+                this.seria.video = "";
+                this.seria.season = "";
+                this.seria.url = "";
+                this.seria.length = "";
+                this.seria.date = "";
+                this.seria.isNot = false;
+
                 this.getData();
 
                 this.$router.push({
