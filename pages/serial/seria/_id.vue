@@ -300,7 +300,6 @@ export default {
                 this.seria.length = "";
                 this.seria.date = "";
                 this.seria.isNot = false;
-
                 this.getData();
 
                 this.$router.push({
